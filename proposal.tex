@@ -1,0 +1,812 @@
+\documentclass[amstex,11pt]{amsart}
+\usepackage{datetime}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{verbatim}
+
+\usepackage{url}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{cite}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\GSp}{GSp}
+\newcommand{\pp}{\mathfrak{p}}
+\newcommand{\nn}{\mathfrak{n}}
+\newcommand{\p}{\mathfrak{p}}
+\newcommand{\n}{\mathfrak{n}}
+\newcommand{\ncisom}{\approx}   % noncanonical isomorphism
+
+
+% Linked CONTENTS
+\usepackage{hyperref}
+%%%%%%%%%%%%%%%%%
+
+%\setlength{\parskip}{2ex}
+\setlength{\parskip}{0.1ex}
+
+\voffset -0.5in
+\hoffset -0.8in
+%\oddsidemargin  -0.3125in
+%\evensidemargin -0.3125in
+\textwidth      6.475in
+\headheight     0.0in
+\topmargin      0.063in
+\textheight=9.3875in
+
+\numberwithin{equation}{section}
+
+% ---- SHA ----
+%\DeclareFontEncoding{OT2}{}{} % to enable usage of cyrillic fonts
+%  \newcommand{\textcyr}[1]{%
+%    {\fontencoding{OT2}\fontfamily{wncyr}\fontseries{m}\fontshape{n}%
+%     \selectfont #1}}
+%\newcommand{\Sha}{{\mbox{\textcyr{Sh}}}}
+%\newcommand{\cyr}{\textcyr}
+\newcommand{\nc}{\newcommand}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\QQ}{\mathbb Q}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\gal}{\textrm{Gal}}
+
+% from PG
+\newcommand{\bG}{\mathbf{G}}
+\newcommand{\sO}{\mathscr O}
+\newcommand{\sM}{\mathscr M}
+\newcommand{\bP}{\mathbf{P}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\fH}{\mathfrak{H}}
+\newcommand{\cusp}{\text{cusp}}
+
+\title{Conference: Curves and Automorphic Forms}
+\begin{document}
+%\begin{center}
+%   \settimeformat{ampmtime}\bf \Large \today{} at \currenttime{}
+%\end{center}
+%(Temporary table of contents so we can find our way around.)
+%\tableofcontents\vfill\mbox{}
+%
+%\break
+
+
+\section{Overview}
+
+The theme for this conference is computational aspects of connections
+between curves and modular forms.  Our goals are to provide a setting
+to
+\begin{itemize}
+\item allow dissemination of relevant recent research results
+\item foster collaboration among experts working in areas which are
+  related, or are conjecturally related
+\item aid in the development of number theorists who are early in
+  their careers and/or from underrepresented groups
+\item make relevant computational results publicly available.
+\end{itemize}
+
+The format of the event will combine elements of conferences and
+workshops to achieve its goals.  Each morning will feature two plenary
+talks given by invited speakers starting with background for their
+area and leading to recent results.  Afternoons will be devoted to
+participants working in small groups.  Some groups will work on
+questions raised by the morning lectures, others will work on
+computations, and yet others will work on presenting computational
+results to the public.
+
+Computational results will be presented through the web site {\em
+  $L$-functions and Modular Forms Database}
+(\url{http://www.LMFDB.org}), which we will refer to as the LMFDB.
+This site is an international collaboration dedicated to presenting
+computational data in number theory in a way which will assist
+mathematicians conducting research, and also in a way to help educate
+visitors to the site on central objects of modern number theory, and their
+interconnections.
+
+Computational projects provide a good path for young mathematicians to
+start to get a feel for an area.  Given the topic, most of the senior
+participants will be well-versed in doing computations in number
+theory.  We will have experts from the LMFDB project in attendance to
+aid people who may be contributing to that project for the first
+time.  Since the LMFDB uses Sage, an open-source computational system,
+we invite a significant number of participants from the {\em Women in
+  Sage} community to help broaden the representation of women in this
+conference.
+
+\bigskip
+
+Theoretical and computational work on elliptic curves over the
+rationals has enjoyed great advances over the past few decades.
+Recently there has been surge of work on extending this in two
+directions, namely to hyperelliptic curves over the rationals and
+elliptic curves over quadratic fields.  In additional, there have been
+parallel advances on the corresponding automorphic objects, namely
+Siegel and Hilbert modular forms.  A major objective of this
+conference is to present this recent work to a wider audience and in
+the process clarify the connections between the algebraic and
+automorphic objects.  There is a large amount of useful related
+numerical data which we would like to make available to the
+mathematics research community.
+
+Recent advances to be covered in workshop lectures:
+\begin{enumerate}
+\item  Elliptic curves/$\Q(\sqrt{5})$.
+
+William Stein and collaborators have been developing the analogue of
+Cremona's tables for elliptic curves over $\Q(\sqrt{5})$.  There are
+numerous difficulties which are not present in the rational case:
+modularity is not known, given the modular form, the construction of
+the corresponding elliptic curve is not known, etc.
+
+One or two lectures by Stein.
+
+\item Hilbert modular forms
+
+John Voight has made extensive tables of Hilbert modular forms,
+primarily over $\Q(\sqrt{5})$ and $\Q(\sqrt{8})$.  The basic
+theory, the computational methods, and the associated L-functions
+(which provide the connection to elliptic curves) will be
+described.
+
+One or two lectures by Voight.
+
+\item  Hyperelliptic curves
+
+Kiran Kedlaya and Andrew Sutherland have produced a wide variety
+of examples of hyperelliptic curves (primarily genus 2, but genus 3
+calculations will be available by the time of the workshop).
+
+One lecture each by Sutherland and Kedlaya
+
+\item  Paramodular forms
+Siegel modular forms on the paramodular group are (conjecturally) the
+modular objects associated to genus 2 hyperelliptic curves.
+Cris Poor and David Yuen have produced the first examples of these
+objects.  These calculations are significantly more difficult than
+the corresponding work on Hilbert modular forms.
+
+One lecture by Poor or Yuen
+
+\item  Elliptic curves/$\Q(i)$
+Elliptic curves over imaginary quadratic fields are fundamentally
+different than elliptic curves over real quadratic fields, primarily
+because the associated modular object is a Bianchi modular form,
+not a Hilbert modular form.  Work in this area is much less advanced
+(despite the fact that John Cremona made tables of elliptic curves
+over $\Q(i)$ in his thesis.
+
+One lecture by Cremona
+
+\item  $L$-function techniques for hyperelliptic curves
+
+Current methods of producing tables of hyperelliptic curves are not
+capable of proving that the list is complete.  David Farmer, Sally
+Koutsoliotas, and Stefan Lemurell and an L-function approach which
+(assuming modularity) can provide the missing step in the proof.
+
+One lecture by Koutsoliotas and/or Lemurell
+\end{enumerate}
+
+\section{Scientific content}
+
+This part needs the most work.
+
+\subsection{Hyperelliptic curves over $\Q$}
+
+%\subsection{Elliptic curves over totally real number fields}
+
+\subsection{Elliptic curves over low degree number fields}
+
+\subsection{Hilbert modular forms}
+
+\subsection{Siegel modular forms}
+
+\subsection{$L$-functions}
+
+\begin{comment}
+
+Among the class of algebraic curves, hyperelliptic curves on one hand
+form the most easily studied subclass due to the explicit nature of
+their description, and on the other hand are general enough to exhibit
+many phenomena typical of arbitrary algebraic curves.
+%The hyperelliptic curves of genus 1 are exactly the elliptic
+%curves and their nontrivial torsors; we thus focus in
+%this discussion on curves of genus greater than 1.
+
+Achieving a meaningful and useful classification of hyperelliptic
+curves in the LMFDB, comparable to the Cremona database of elliptic
+curves, would require progress in the following
+directions. (Throughout this discussion, we will limit attention to
+hyperelliptic curves over $\QQ$, but we may consider working over
+other number fields later.)
+
+\begin{enumerate}
+\item {\em Tabulation of Euler factors at primes of good reduction.}
+  For genus 2 and 3, this is largely addressed by the work of Kedlaya
+  and Sutherland \cite{kedlaya-sutherland-ants}, \cite{smalljac},
+  which incorporates $p$-adic cohomology in the form of an algorithm
+  of Harvey \cite{harvey} along with a highly optimized baby-step
+  giant-step algorithm for smaller primes.
+%When the Jacobian of the curve is modular, we can also use modular symbols.
+
+\item\label{hyper:euler} {\em Computation of Euler factors and other
+    associated data at primes of bad reduction, e.g., the conductor.}
+  This is most tractable in genus 2, where an implementation of an
+  algorithm due to Qing Liu (which computes the conductor and
+  reduction type for odd residue characteristic) is available in Sage.
+  Extending this to the case of residue characteristic 2 is not
+  straightforward, but an algorithm for computing regular models is
+  implemented in Magma and another one is currently being implemented
+  in Singular.  Using this, one can find the Euler factors using the
+  Galois action on the dual graphs of the special fibers of the
+  regular model and the Euler factors for components of positive genus
+  in those special fibers. To find the conductor one needs a
+  semistable model. Algorithms for computing this and deducing the
+  conductor are currently being
+
+developed by Wewers.  Alternatively, one can conditionally collect
+some of the same data using analytic methods, e.g., methods of Booker
+\cite{Bo2} or generic methods using the approximate functional
+equation (see Section~\ref{sec:findingbadfactors}).
+
+
+\item
+{\em Computation of Mordell-Weil groups of Jacobians of hyperelliptic
+curves.} Computing generators of a subgroup of finite index may be
+facilitated by the recent work of Bhargava and Gross on 2-Selmer
+groups of hyperelliptic curves \cite{bhargava-gross}, but some work
+(suitable for a graduate student or postdoc) is still needed.  In
+order to compute generators for the full Mordell-Weil group, one needs
+to saturate a given finite index subgroup. For $g=2$, everything has
+been implemented in Magma; for $g=3$, this is addressed by work in
+progress of Stoll. For arbitrary $g$, canonical heights can be
+computed using the algorithm from \cite{mueller:computing}
+(implemented in Magma). In addition, one needs to bound the difference
+between canonical and naive heights and search for points of naive
+height up to a given bound.  Recent work of Holmes
+%\cite{holmes:arakelov-height} gives an algorithm for both of these,
+\cite{holmes:arakelov-height} provides such an algorithm,
+but to make it practical the resulting bounds will have to be
+improved dramatically, probably using techniques from Arakelov
+geometry.
+
+
+\item
+{\em Computation of other BSD invariants, e.g., torsion subgroups,
+regulators, and Tamagawa numbers.} In genus 2, many of these questions
+are addressed in existing literature (see for instance
+\cite{cassels-flynn}) but are not fully implemented. The computation
+of torsion subgroups is implemented in Magma. To compute Tamagawa
+numbers, one needs the configuration of the special fibers of a
+regular model (see (\ref{hyper:euler}) above) and how Galois acts
+on the components. Given a finite index subgroup, one can compute the
+regulator (up to a rational square) using algorithms due to M\"uller
+\cite{mueller:computing} (implemented in Magma) or Holmes
+\cite{holmes:computing}. For $g=2$ (and soon for $g=3$ due to work in
+progress of Stoll) one can compute the regulator exactly using
+Magma. See (\ref{hyper:euler}) above. 
+
+\item
+{\em Computation of $p$-adic regulators and comparison with special
+  values of $p$-adic $L$-functions.}  Balakrishnan and Besser
+\cite{balakrishnan-besser} describe a method to compute $p$-adic
+heights via Coleman integration. Putting this together with work of
+M\"{u}ller \cite{mueller:computing} gives us a means of computing
+$p$-adic regulators. Pollack and Stevens
+\cite{pollack-stevens:overconv} gave an algorithm that computes
+special values of $p$-adic $L$-functions to high precision using
+overconvergent modular symbols.  Balakrishnan, M\"{u}ller, and Stein
+\cite{bms} recently stated a $p$-adic analogue of the Birch and
+Swinnerton-Dyer conjecture for modular abelian varieties and
+numerically compared $p$-adic special values to $p$-adic regulators,
+thus giving evidence for the conjecture.  PI Stein's Ph.D. student
+Simon Spicer is doing his thesis work on optimization and applications
+of the overconvergent modular symbols algorithm, which would be partly
+supported by this grant.
+
+
+
+\item {\em Determination of all curves of a given genus with conductor
+in a given range, assuming appropriate modularity conjectures.} This
+is probably only feasible for genus 2, and in any case is closely
+related to Siegel modular forms (see Section~\ref{sec:siegel}).  For
+small conductors we can make use of $L$-function techniques (see
+Section~\ref{sec:hyperelliptic1000}).
+
+\item {\em Rational points.} The most promising methods for this are
+variants of the Chabauty method, possibly combined with the
+Mordell-Weil sieve, see for instance \cite{bruin-stoll:mwsieve}. Both
+of these depend on (partial) knowledge of the Mordell-Weil group. In
+genus 2, this should cover most cases encountered in practice; see for
+example \cite{bruin-stoll}.
+
+\item
+{\em Sato-Tate distributions (or equivalently motivic Galois groups).}
+These are fully classified in genus 2; see
+\cite{fite-kedlaya-rotger-sutherland}.  We will consider genus~$3$ next.
+
+\end{enumerate}
+
+\subsection{Hyperelliptic 1000}
+
+
+\label{sec:hyperelliptic1000}
+
+At present there exist extensive tables of elliptic curves$/\Q$ which
+are both accurate and complete~\cite{cremona}.  These tables are made
+possible by three theoretical results: the fact that elliptic curves
+are modular~\cite{breuil-conrad-diamond-taylor}, the fact
+that there exists a method (modular symbols) for finding a basis of
+the space of holomorphic cusp forms of a given weight and level, and
+also the fact that one can directly construct the elliptic curve from the
+modular form.
+
+For hyperelliptic curves, none of those results are currently known.
+In fact, it was only recently~\cite{BrumerKramer} that the proper modularity
+conjecture was even formulated, indicating precisely which weight~2
+Siegel modular forms should be associated to hyperelliptic curves of
+genus~2. % This refined a more general conjecture of Yoshida.
+
+%Developing an analogue of modular symbols for 
+Developing new ways to generate
+Siegel modular forms is
+a major undertaking of this proposal (see Section \ref{sec:siegel}).
+But before such results are available, there is another approach,
+using $L$-functions, which we can use to develop a provably complete
+table of hyperelliptic curves of small conductor.
+
+Some progress in this direction is already known:
+
+\vspace{0.05in}
+\noindent{\bf Theorem}[Brumer and Kramer] 
+\emph{
+Suppose $A$ is a semistable abelian surface of odd non-square
+conductor N.
+If $N \le 500$, then $N$ can only be
+249, 277, 295, 349, 353, 389, 427, 461, for which examples are known,
+ or 415, 417, which we expect do not occur.
+}
+\vspace{0.05in}
+
+Thus, at least for odd conductors, the list of known hyperelliptic
+curves is complete, at least up to $413$.  The reason that Brumer and
+Kramer cannot resolve the case of $N=415$ is that their method for
+eliminating a conductor (for which they suspect there is no
+corresponding hyperelliptic curve) is to show the nonexistence of a
+number field with certain properties.  But for $N=415$ there
+does exist such a field, but presumably no corresponding hyperelliptic
+curve, so their method fails.
+
+We propose using analytic $L$-function techniques to
+handle some cases which are not accessible by algebraic methods,
+leading to a provably complete table of hyperelliptic curves of small conductor.
+This is an illustration of our theme that new results follow from
+bringing together different areas.
+
+A genus 2  hyperelliptic  curve has a degree 4 $L$-function which
+(in the analytic normalization) satisfies a functional equation
+of the form
+\begin{equation}
+\label{eqn:hyperL}
+\Lambda(s) = N^{s/2}\Gamma(s+\tfrac12)^2 L(s) = \pm \Lambda(1-s),
+\end{equation}
+where $N$ is the conductor of the curve.
+In that normalization, the Dirichlet coefficients are of the form
+$a_p = A(p)/\sqrt{p}$ where $A(p)$ is a rational integer with
+$|A(p)|\le 4\sqrt{p}$.
+
+
+Work of PI Farmer, together with Koutsoliotas and Lemurell, 
+shows
+\vspace{0.05in}
+\noindent{\bf Proposition}[FKL]  \emph{There is no $L$-function satisfying \eqref{eqn:hyperL}
+with $N=415$,
+with Dirichlet coefficients $a(p^j) = A(p^j)/p^{j/2}$ where
+$A(p^j)$ are rational integers satisfying $|A(p)|\le 4\sqrt{p}$ and
+$|A(p^2)|\le 10 p$.
+}
+\vspace{0.05in}
+
+Thus, assuming a modularity conjecture, there is no hyperelliptic
+curve of conductor~$415$.
+
+The idea behind the calculation is that one can use the approximate
+functional equation to write down equations for the Dirichlet coefficients,
+as in Section~\ref{sec:Lsearch}. But instead of solving
+the system, one checks the consistency of the system using the
+(finitely many) possibilities for the first few coefficients and
+the Hasse bound for the remaining coefficients. This eliminates
+some of the options for the first few coefficients. Then one proceeds
+to search the tree of possibilities for the later coefficients, pruning
+branches when the initial choices are incompatible with the Hasse bound
+for the later coefficients. If such an $L$-function exists, then this method
+finds its first several Dirichlet coefficients. If no such $L$-function
+exists,
+% and one can accurately approximate the $L$-function using
+%a small number of Dirichlet coefficients, 
+then one can hope that every branch of the
+tree is pruned and  the non-existence becomes a theorem.
+
+The above proposition is work-in-progress, but based on our experience in that
+calculation, we expect
+to determine the
+complete list of hyperelliptic curve $L$-functions up to conductor~1000,
+and probably a bit further.  This would bring the table of
+hyperelliptic curves up to the point where elliptic curve tables were
+around 1990.  Considering the enormous research benefits (both direct
+and indirect) that have come from making detailed tables of elliptic
+curves, we believe that producing such tables and making the data
+public is an important research contribution.
+
+
+\section{Elliptic curves over number fields}
+\label{sec:elliptic}
+
+In 2012, J. Cremona successfully enumerated all elliptic curves over
+$\Q$, ordered by conductor, up to the first curve of rank $4$ (which
+has conductor 234,446). This major milestone was the
+culmination of over two decades of progress, including
+improvements in theory and implementations of algorithms and access to
+more powerful computing equipment.  Inspired by Cremona's work, we
+propose to carry out similar projects over number fields other than
+$\Q$.  Work in this section will be coordinated by PIs Gunnells and
+Stein, with support from senior scientists Ash and Cremona.
+
+Our initial work, described in Section~\ref{sec:ECQrt5}, will focus on
+quadratic fields, and more specifically on real quadratic fields.
+Focusing on totally real number fields $F$  %, in which all embeddings
+%$F\hookrightarrow \C$ land in $\R$, 
+grants us substantial extra
+structure.  In particular, there is a {\em conjectural} bijection
+between isogeny classes of elliptic curves over $F$ and rational
+Hilbert modular newforms of parallel weight 2 (this bijection is only
+known when $F=\Q$ -- see \cite{breuil-conrad-diamond-taylor}), and
+this bijection provides functional equations for $L$-functions,
+Heegner points, and results toward the Birch and Swinnerton-Dyer
+conjecture (see \cite{zhang:heightsshimura}).
+
+One missing ingredient is an efficient algorithm to construct the
+(conjectured) elliptic curve from the Hilbert modular form.  We are
+forced to combine a variety of strategies, described below, which in
+the course of this project we hope to make more efficient.
+
+We also consider elliptic curves over nonreal cubic fields in
+Section~\ref{sec:ECcubicfields}.  For that case, the underlying theory
+is less developed, and there is a significant amount of basic research
+to be done.  
+
+
+\subsection{Elliptic curves over $\Q(\sqrt{5})$}
+\label{sec:ECQrt5}
+Our goal is to find all modular elliptic curves over $\Q(\sqrt{5})$,
+ordered by conductor, up to the first of analytic rank 4.
+
+Noam Elkies found the smallest known conductor of a elliptic curve of
+rank $4$ over $\Q(\sqrt{5})$ that is not a base change from $\Q$; it
+has norm conductor 1,209,079.  We estimate that it should be possible
+to find all the rational Hilbert modular newforms of norm conductor up
+to 1,209,079 in around 200,000 hours of CPU time, e.g., less than two
+months using the hardware we are requesting as part of this proposal.
+It is difficult to estimate the time it will take to find the
+corresponding elliptic curves, since there is no known efficient
+algorithm to find an elliptic curve attached to a newform (in some
+cases, we do not even know there is a curve, though this is
+conjectured).
+
+We use an optimized version of the algorithm in \cite{dembele:hilbert5} to
+compute all rational Hilbert modular cusp forms over $\Q(\sqrt{5})$ of
+weight $(2,2)$ and level $\n$.  In order to implement this algorithm,
+it is critical that we can compute with $\PP^1(R/\n)$ very, very
+quickly; as explained in \cite[\S2.2]{sqrt5first} we have a highly
+optimized implementation that we have customized for the case
+$\Q(\sqrt{5})$.  Supported by this grant, PI Stein's graduate student
+R.\thinspace{}A. Ohana intends to generalize this approach to other
+fields.
+
+%[[discussion of computing rational hilbert newforms; basically what we did at snowbird]]
+
+Some techniques for finding a curve attached a
+newforms $f$ with Hecke eigenvalues $a_{\pp}(f)$, for primes $\pp$ of the
+ring of integers of $\Q(\sqrt{5})$:
+\begin{enumerate}
+\item {\em Stein-Watkins search} -- consult a database made by doing a search
+in the style of \cite{stein-watkins:ants5}.
+\item {\em Sieved enumeration} -- use $a_{\pp}(f)$ to impose congruence conditions on the coefficients 
+of the Weierstrass equation, then search.
+\item {\em Torsion families} -- use $a_{\pp}(f)$ to determine whether
+  $\ell\mid \#E(F)$ for some $E$ attached to $f$, and if so search
+  for $E$ in the family of curves with $\ell$-torsion.
+\item {\em Congruence families} -- if we know some $E'$ and that $E'[\ell]\ncisom E[\ell]$, use
+Tom Fisher's explicit families \cite{fisher:families_cong}.
+\item {\em Twisting} -- find a minimal conductor twist $f^{\chi}$ of $f$, find a curve
+attached to $f^{\chi}$, then twist it to get a curve attached to $f$.
+\item {\em Cremona-Lingham} -- find many curves with good reduction outside the level $\nn$ of $f$ by searching for integral points on auxiliary curves \cite{cremona-lingham}.
+\item {\em Dembele, Bober} -- determine periods from special values of $L$-series \cite{dembele:elliptic-curves-quadratic-fields}.
+%\item {\em Elkies} -- use the $\lambda$ inv
+\end{enumerate}
+
+Once we find a curve in the isogeny class corresponding to the
+rational Hilbert newform, Billerey's algorithm \cite{billerey}
+combined with Velu's equations for isogenies enable us to explicitly
+compute representative elliptic curves for each isomorphism class.
+%Billerey's algorithm does not depend on any conjectures, and works
+%over any number field.
+
+In \cite{sqrt5first}, the PI Stein and numerous undergraduates,
+graduate students, and a postdoc, made a complete table of every
+elliptic curve over $\Q(\sqrt{5})$, up to the first curve of rank $2$
+(which has norm conductor $1831$).  Stein intends to partly support
+one of these graduate students using this grant (A. Deines) to carry
+out a Stein-Watkins \cite{stein-watkins:ants5} style search for curves
+over $\Q(\sqrt{5})$.  Another one of the co-authors (R.A. Ohana)
+developed the sieved enumeration method, and is starting graduate
+school now at UW; Stein intends to support Ohana to do further work in
+this direction.
+
+%This work will also produce a multitude of Hilbert modular forms, which
+%are of independent interest.  Stein will work with LMFDB collaborator Voight
+%to make this data available.
+
+\subsection{Elliptic curves over complex cubic fields}
+\label{sec:ECcubicfields}
+
+In this section we describe the computation of tables of elliptic curves over
+complex cubic fields $F$ (i.e., cubic fields with exactly one real
+place).  Such computations have already been carried out for $F$ the
+cubic field of discriminant $-23$ in work of PI Gunnells with Yasaki
+and Klages-Mundt \cite{complexcubic, neg23} up to conductors of norm
+911.  Our goals are to extend these computations in several
+directions. See Section~\ref{sec:CohoArithGps} for background. 
+
+As in Section \ref{sec:ECQrt5}, one expects that for every elliptic
+curve $E$ over $F$, there should exist a cuspform $f$ on $\GL_{2}/F$
+with rational Hecke eigenvalues such that $L (s,f) = L (s,E)$.  Hence
+the first step is computing a table of suitable automorphic forms on
+$\GL_{2}/F$, so that one has a (conjectural) list of conductors of
+possible curves.  Note that the connections between such forms and
+arithmetic are completely unproven: one doesn't even know, for
+example, that such forms will have $\ell$-adic families of Galois
+representations attached to them, in contrast to the Hilbert modular
+case. 
+
+To compute the relevant automorphic forms, we use the fact that they
+are cohomological and compute the
+cohomology of subgroups of $\GL_{2} (\sO)$, where $\sO$ is the ring of
+integers of $F$.  These methods are quite different than those 
+described in Section~\ref{sec:ECQrt5} and we refer to Section~\ref{sec:CohoArithGps}
+for background.
+For any ideal $\n\subset \sO$, we
+consider the subgroup $\Gamma_{0} (\n)$ of matrices upper-triangular
+mod $\n$ and form the locally symmetric space $Y_{\n} = \Gamma_{0}
+(\n) \backslash G/KA_{G}$.  The space $Y_{\n}$ has dimension $6$, the
+virtual cohomological dimension $\nu$ is $5$, and the top of cuspidal
+range is $4$.  There is an explicit reduction theory due to Koecher
+\cite{koecher}, generalizing Voronoi's work on perfect quadratic forms
+\cite{voronoi}, that allows us to construct a cell decomposition of
+$Y_{\n}$ for any $\n$.  Using this we compute $H^{4} (Y_{\n} ;\C) $
+for all ideals up to some bound on their norm.  Note that work of Ash
+\cite{ash.minimal} provides an analogue of the classical theory of
+modular symbols for $\GL_{2}/\Q$ \cite{manin} for this setting, but it
+computes $H^{5}$, not $H^{4}$, and thus does not see the cuspidal
+cohomology.
+
+To identify the forms corresponding to elliptic curves, we must
+compute the Hecke action on $H^{4}$.  This requires some effort, since
+even though the Hecke operators act on cohomology, they don't preserve
+the Koecher cells, and thus do not act directly on the cochain complex
+built from these cells.  The classical theory of modular symbols
+encounters the same problem.  More precisely, consider the Satake
+compactification $\fH^{*}$ of the upper halfplane, suppose $\Gamma
+\subset \SL_{2} (\Z)$ is a congruence subgroup, and let $X_{\Gamma} =
+\Gamma \backslash \fH^{*}$.  Any two cusps $u,v$ determine a modular
+symbol $[u,v]\in H_{1} (X_{\Gamma }, \partial X_{\Gamma }; \C)$: one
+takes the class of the image of the oriented ideal geodesic in
+$\fH^{*}$ running from $u$ to $v$.  The analogues of the Koecher cells
+are the $\SL_{2} (\Z)$-translates of the geodesic from $0$ to $\infty$;
+the resulting modular symbols are called unimodular symbols.  One can
+determine the relations among the modular symbols to determine a
+combinatorial model for the relative homology, which gives a model for
+$H^{1} (X_{\Gamma}\smallsetminus \partial X_{\Gamma }; \C)$ by
+duality.  The modular symbols admit an action of the Hecke operators
+compatible with duality, but the action does not preserve the subspace
+of unimodular symbols.  
+
+In the setting of $\GL_{2}/F$, the Koecher cochain complex is the
+analogue of the space of unimodular symbols, and to compute the Hecke
+action we embed it in a larger complex, the \emph{sharbly complex}.
+This complex, which gives a resolution of the Steinberg module of
+$\GL_{n} (F)$, is essentially the chain complex of the free simplicial
+complex on the cusps of a certain compactification of $G/KA_{G}$ %,
+%although there are some subtleties 
+\cite{heckants, complexcubic,
+AGM5}.  Computing the Hecke action involves %is then done by an algorithm that
+taking a sharbly cycle representing a class in $H^{4} (Y_{\n}; \C)$ and
+rewriting it in terms of cycles supported on Koecher chains.  This
+is similar to the approach used in the context of $\SL_{4} (\Z)$
+\cite{experimental, computation, AGM2, AGM3, AGM4, AGM5}, another
+situation in which the top of the cuspidal range is $\nu -1$.  This
+relies heavily on a generalization of the Ash--Rudolph
+algorithm \cite{ash.rudolph} for modular symbols on $\GL_{n} (\Z)$.
+Computing Hecke operators is the main bottleneck, although one can
+often predict the existence of elliptic curves at higher level norms
+by computing ranks of cohomology groups and using a yoga of ``old and
+new'' cohomology classes \cite{torsioncubic}.
+%  For instance, there may
+%be a level at which all of $H^{4}$ is accounted for by Eisenstein
+%series and old cohomology classes, except for one dimension; this
+%predicts the existence of a rational eigenclass and thus an elliptic
+%curve of this conductor.
+
+Once one has a list of possible conductors, one must find equations of
+elliptic curves in each isogeny class.  To do this we use similar
+techniques as in Section \ref{sec:ECQrt5}: naive enumeration,
+Cremona--Lingham, searching in torsion families, and so on. 
+Stein and Gunnells will coordinate on this work.
+% These
+%methods suffer from the same drawbacks as in the $\Q(\sqrt{5})$ case,
+%although they are remarkably useful in practice.  
+Once a curve in each
+isogeny class is found, work of Billerey \cite{billerey} enables us to
+compute representatives for each of the isomorphism classes, just as
+for the $\Q(\sqrt{5})$ case.
+
+We propose to work towards the following goals:
+
+\begin{enumerate}
+\item Extension of the tables in \cite{complexcubic, neg23} as far as
+possible.
+\item Extending the computations in \cite{complexcubic, neg23} for other
+complex cubic fields. % Some %preliminary 
+Data for elliptic curves over
+the fields of discriminants  $-31$, \dots , $-107$ can be found at
+\cite{ariah} and in \cite{torsioncubic}.
+\item Extend the computations of \cite{complexcubic} to nontrivial
+coefficients, i.e.~compile tables of higher weight cuspforms.
+\item Incorporate all this data into the LMFDB.
+\end{enumerate}
+
+
+
+
+
+
+\subsection{Already in intro?}
+We propose a workshop in which each day features two talks providing
+background information and describing recent work and current problems
+of interest.  Each afternoon will involve group work in which
+the participants are actively engaged in a variety of activities related
+to the workshop focus.  Those activities will include starting or
+continuing research projects, going through the details of advanced
+material which was not covered in the lectures, and working to put
+new material into the $L$-functions and Modular Forms Database 
+
+\end{comment}
+
+\section{Funding}
+
+All requested funds are for participant support.  After funding invited
+speakers, priority 
+follows the reverse seniority rule: highest priority goes to graduate
+students, then post-docs and junior faculty, and finally to established
+faculty who do not have external funding to support their travel.
+Mathematicians from underrepresented groups are treated one level
+higher in terms of priority.
+
+The School of Mathematical and Statistical Sciences at ASU has pledged to
+contribute \$7,000?  to help support this conference.
+Since ASU is an IMA participating institution, we will apply to the
+IMA for a \$5,000 conference grant as well.
+
+\section{Logistics}
+
+The conference will be held on the main campus of Arizona State
+University in Tempe, AZ.  Tempe can be easily accessed from Phoenix
+Sky Harbor international airport, which is a hub for a major airline,
+so is easily accessible.
+
+ASU will provide meeting space and wifi access for conference
+activities, and the School of Mathematical and Statistical Sciences at
+ASU will provide secretarial and clerical support for the conference.
+
+\subsection{Personnel}
+
+The organizing committee for the conference is David
+Farmer, Paul Gunnells, 
+John Jones, and Holly Swisher.
+
+We have tentative agreements from the following mathematicians to give
+plenary talks:
+John Cremona, Kiran Kedlaya, Sally Koutsoliotas, Stefan Lemurell, 
+Cris Poor, William Stein, Andrew Sutherland, John Voight, and David Yuen.
+
+\subsection{Daily organization}
+
+
+Each day will feature two talks in the morning providing background
+information and describing recent work and current problems of
+interest.  Each afternoon will involve group work in which the
+participants are actively engaged in a variety of activities related
+to the workshop focus.  Those activities will include starting or
+continuing research projects, going through the details of advanced
+material which was not covered in the lectures, and working to put new
+material into the $L$-functions and Modular Forms Database
+(\url{http://www.LMFDB.org}).
+
+\subsection{Dissemination}
+
+Talks about the lmfdb.
+
+% \section{Prior conferences}
+
+% Perhaps discussing previous lmfdb workshops?
+
+
+\begin{comment}
+Recent advances to be covered in workshop lectures:
+
+\subsection{Elliptic curves over $\Q(\sqrt{5})$}
+
+William Stein and collaborators have been developing the analogue of
+Cremona's tables for elliptic curves over $\Q(\sqrt{5})$.  There are
+numerous difficulties which are not present in the rational case:
+modularity is not known, given the modular form, the construction of
+the corresponding elliptic curve is not known, etc.
+
+One or two lectures by Stein.
+
+\subsection{Hilbert modular forms}
+
+John Voight has made extensive tables of Hilbert modular forms,
+primarily over $\Q(\sqrt{5})$ and $\Q(\sqrt{8})$.  The basic
+theory, the computational methods, and the associated $L$-functions
+(which provide the connection to elliptic curves) will be
+described.
+
+One or two lectures by Voight.
+
+\subsection{Hyperelliptic curves}
+
+Kiran Kedlaya and Andrew Sutherland have produced a wide variety
+of examples of hyperelliptic curves (primarily genus $2$, but 
+genus $3$
+calculations will be available by the time of the workshop).
+
+One lecture each by Sutherland and Kedlaya
+
+\subsection{Paramodular forms}
+
+Siegel modular forms on the paramodular group are (conjecturally) the
+modular objects associated to genus 2 hyperelliptic curves.
+Cris Poor and David Yuen have produced the first examples of these
+objects.  These calculations are significantly more difficult than
+the corresponding work on Hilbert modular forms.
+
+One lecture by Poor or Yuen
+
+\subsection{Elliptic curves over $\Q(i)$}
+
+Elliptic curves over imaginary quadratic fields are fundamentally
+different than elliptic curves over real quadratic fields, primarily
+because the associated modular object is a Bianchi modular form,
+not a Hilbert modular form.  Work in this area is much less advanced
+(despite the fact that John Cremona made tables of elliptic curves
+over $\Q(i)$ in his thesis.
+
+One lecture by Cremona
+
+\subsection{$L$-function techniques for hyperelliptic curves}
+
+Current methods of producing tables of hyperelliptic curves are not
+capable of proving that the list is complete.  David Farmer, Sally
+Koutsoliotas, and Stefan Lemurell and an L-function approach which
+(assuming modularity) can provide the missing step in the proof.
+
+One lecture by Farmer, Koutsoliotas, or Lemurell.
+\end{comment}
+
+\include{References}
+\end{document}
+
