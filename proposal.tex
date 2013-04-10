@@ -135,42 +135,49 @@ Recent advances to be covered in workshop lectures:
 \begin{enumerate}
 \item  Elliptic curves/$\Q(\sqrt{5})$.
 
+\noindent
 William Stein and collaborators have been developing the analogue of
 Cremona's tables for elliptic curves over $\Q(\sqrt{5})$.  There are
 numerous difficulties which are not present in the rational case:
 modularity is not known, given the modular form, the construction of
 the corresponding elliptic curve is not known, etc.
 
-One or two lectures by Stein.
+%One or two lectures by Stein.
 
 \item Hilbert modular forms
 
+\noindent
 John Voight has made extensive tables of Hilbert modular forms,
 primarily over $\Q(\sqrt{5})$ and $\Q(\sqrt{8})$.  The basic
-theory, the computational methods, and the associated L-functions
+theory, the computational methods, and the associated $L$-functions
 (which provide the connection to elliptic curves) will be
 described.
 
-One or two lectures by Voight.
+%One or two lectures by Voight.
 
 \item  Hyperelliptic curves
 
+\noindent
 Kiran Kedlaya and Andrew Sutherland have produced a wide variety
 of examples of hyperelliptic curves (primarily genus 2, but genus 3
 calculations will be available by the time of the workshop).
 
-One lecture each by Sutherland and Kedlaya
+%One lecture each by Sutherland and Kedlaya
 
 \item  Paramodular forms
+
+\noindent
 Siegel modular forms on the paramodular group are (conjecturally) the
 modular objects associated to genus 2 hyperelliptic curves.
 Cris Poor and David Yuen have produced the first examples of these
 objects.  These calculations are significantly more difficult than
 the corresponding work on Hilbert modular forms.
 
-One lecture by Poor or Yuen
+%One lecture by Poor or Yuen
 
 \item  Elliptic curves/$\Q(i)$
+
+\noindent
 Elliptic curves over imaginary quadratic fields are fundamentally
 different than elliptic curves over real quadratic fields, primarily
 because the associated modular object is a Bianchi modular form,
@@ -178,33 +185,160 @@ not a Hilbert modular form.  Work in this area is much less advanced
 (despite the fact that John Cremona made tables of elliptic curves
 over $\Q(i)$ in his thesis.
 
-One lecture by Cremona
+%One lecture by Cremona
 
 \item  $L$-function techniques for hyperelliptic curves
 
+\noindent
 Current methods of producing tables of hyperelliptic curves are not
 capable of proving that the list is complete.  David Farmer, Sally
-Koutsoliotas, and Stefan Lemurell and an L-function approach which
+Koutsoliotas, and Stefan Lemurell and an $L$-function approach which
 (assuming modularity) can provide the missing step in the proof.
 
-One lecture by Koutsoliotas and/or Lemurell
+%One lecture by Koutsoliotas and/or Lemurell
 \end{enumerate}
 
 \section{Scientific content}
 
-This part needs the most work.
-
 \subsection{Hyperelliptic curves over $\Q$}
+
+In this workshop we will focus on recent work concerning hyperelliptic 
+curves
+of genus~$2$, that is, a smooth curve of the form
+\begin{equation}
+y^2=f(x)
+\end{equation}
+where $f\in k[x]$ is a polynomial of degree 5 or~6, where $k/\Q$ is a 
+number field.
+Our specific focus is on the recent work of Kedlaya and Sutherland on the
+distribution of Euler factors of the $L$-function of the curve.  This work
+concerns abelian surfaces; at the workshop we will bring out the 
+connections
+with other objects.
+
+It is not the hyperelliptic curve, but rather its jacobian to which we
+can associate an $L$-function.  The jacobian, $A$, is an abelian 
+surface/$k$.
+What Kedlaya and Sutherland proved is that there are (up to conjugacy)
+52 subgroups of $USp(4)$ which determine the distribution of Euler factors
+of the $L$-function of $A$.  That is, for each abelian surface $A$ there is
+a closed subgroup of $USp(4)$, called the Sato-Tate group of $A$,
+such that the local factors of the
+$L$-function of $A$ have the same limiting distribution as the 
+characteristic
+polynomials of matrices in the subgroup.
+They exhibit hyperelliptic curves whose Jacobians give examples of all 52 
+cases,
+of which 34 occur for $k=\Q$.
+
+Workshop lectures will describe how the Sato-Tate group arises
+from the Galois action on the Tate module of~$A$, and briefly describe how
+the subgroups were classified.  While some of this material can be 
+described
+for any number field, we will primarily consider hyperelliptic curves over 
+the
+rationals.  In this case the $L$-function has degree~4, which makes 
+computation
+more tractable, and there are connections to objects from other lectures,
+such as Siegel modular forms.  The role of the Sata-Tate group in 
+identifying
+the associated modular object, and determining its properties, will be the
+starting point for discussions on future avenues of research.
+
+
 
 %\subsection{Elliptic curves over totally real number fields}
 
 \subsection{Elliptic curves over low degree number fields}
 
+An elliptic curve over a number field $k/\Q$ has a $L$-function of
+degree~$2d$, where $d=[k:\Q]$.  We will be primarily concerned with
+quadratic fields, because of their relation to other objects already
+in the LMFDB.
+
+In the case of real quadratic fields, lectures will focus on the
+computational challenges faced by Stein and his collaborators as they
+tabulate elliptic curves over $\Q(\sqrt(5))$.  There are numerous
+aspects of that work which are hampered by our rudimentary knowledge
+of this area; this discussion will be the starting point for research
+project involving both theory and computation.
+
+The modular object associated to $E/\Q(\sqrt(5))$ is a Hilbert modular
+form on $\GL(2)/\Q(\sqrt(5))$, which will be the topic of another
+series of lectures.
+
+
 \subsection{Hilbert modular forms}
 
 \subsection{Siegel modular forms}
 
+Computation of Siegel modular forms is quite rudimentary compared to
+the computation of either classical or Hilbert modular forms.  For
+higher weight there is the possibility of employing cohomological
+methods (the analogue os modular symbols for classical holomorphic
+modular forms).  However, for the weight 2 case, which is associated
+to hyperelliptic curves, this is not an option.  Specifically, we are
+interested in weight 2 cusp forms on the level-$N$ paramodular group,
+defined as
+$$
+K(N)=\left\{
+\left(\begin{matrix}
+  * & N* & * &*\\
+* & * & * & */N\\
+* & N* &*&*\\
+N*&N*&N*&*
+\end{matrix}\right)
+:
+*\in{\Bbb Z}\right\}\cap \mathrm{Sp}(4, {\Bbb Q}).
+$$
+This group is an an analogue of the Hecke congruence group
+$\Gamma_0(N)$, in the sense that it is normalized by an analogue of
+the Fricke involution.
+
+Current methods, primarily due to Poor and Yuen, are computationally
+intensive due to the difficulty of finding a basis for the space of
+cusp forms.  The main technique is via descent from higher weights,
+and exploiting the ``smearing'' action of Hecke operators acting on
+non-cuspforms.  Unless there are new developments between now and the
+workshop, lectures on Siegel modular forms will briefly cover
+background and computational methods, and then focus on the
+``paramodular conjecture,'' which is the higher rank analogue of
+modularity for elliptic curves.
+
+
 \subsection{$L$-functions}
+
+An $L$-function is a Dirichlet series with a functional equation and
+an Euler product, plus a few technical conditions.  One view of
+$L$-functions is that they are the glue which connects related
+mathematical objects.  For example, a geometric object is said to be
+modular if it has the same $L$-function as an automorphic form.
+
+In this workshop the general theory of $L$-functions will be
+introduced, and this framework will be used to provide a high-level
+description of the connections between the other objects which have
+been introduced.  There are two topics of current research which will
+be presented and then will form the basis of later discussions.  The
+first is the recent discovery by Farmer, Koutsoliotas, and Lemurell
+that it is possible in many cases to generate the $L$-function of an
+object without first finding the object itself.  This method has been
+successful for a variety of degree~4 $L$-functions, but it does not
+work in all cases.  Since the objects being described in the other
+lectures are associated with degree 4 $L$-functions, this topic is
+timely and the methods and current limitations will be described
+carefully.
+
+The second topic is the fact that high degree $L$-functions (degree 3
+or larger) are computationally expensive to evaluate.  This limits our
+ability to make detailed studies of, for example, the distribution of
+zeros of these functions.  The underlying cause of these computational
+problems will be described, leading to discussions for possible ways
+to improve the calculations.  One possibility, which is speculative
+but worth considering, is that properties of the underlying objects
+could be exploited in some way.  This will take advantage of the fact
+that both the $L$-functions and their underlying objects will be
+discussed in detail at the workshop.
+
 
 \begin{comment}
 
