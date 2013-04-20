@@ -76,42 +76,42 @@
 
 \section{Overview}
 
-The theme for this conference is computational aspects of connections
-between curves and modular forms.  Our goals are to provide a setting
+The theme for this conference is connections
+between curves and modular forms and their computational aspects.
+Our goals are to provide a setting
 to
 \begin{itemize}
-\item allow dissemination of relevant recent research results
+\item allow dissemination of recent research results;
 \item foster collaboration among experts working in areas which are
-  related, or are conjecturally related
-\item aid in the development of number theorists who are early in
-  their careers and/or from underrepresented groups
+  (conjecturally) related;
+\item aid in the development of number theorists who are early-career or from underrepresented groups; and
 \item make relevant computational results publicly available.
 \end{itemize}
 
-The format of the event will combine elements of conferences and
-workshops to achieve its goals.  Each morning will feature two plenary
-talks given by invited speakers starting with background for their
+The format of the event will combine elements of both a conference and
+a workshop to achieve its goals.  Each morning will feature two plenary
+talks given by invited speakers, starting with background for their
 area and leading to recent results.  Afternoons will be devoted to
 participants working in small groups.  Some groups will work on
-questions raised by the morning lectures, others will work on
-computations, and yet others will work on presenting computational
+questions raised by the morning lectures, some will work on
+computations, and others will work on presenting computational
 results to the public.
 
-Computational results will be presented through the web site {\em
-  $L$-functions and Modular Forms Database}
-(\url{http://www.LMFDB.org}), which we will refer to as the LMFDB.
+Computational results will be made available through the website {\em
+  $L$-Functions and Modular Forms Database}
+(\url{http://www.lmfdb.org}), referred to as the \textsf{LMFDB}.
 This site is an international collaboration dedicated to presenting
-computational data in number theory in a way which will assist
-mathematicians conducting research, and also in a way to help educate
-visitors to the site on central objects of modern number theory, and their
+computational data in number theory and related fields to assist
+mathematicians conducting research and also to help educate
+visitors to the site about some of the central objects of modern number theory and their
 interconnections.
 
 Computational projects provide a good path for young mathematicians to
-start to get a feel for an area.  Given the topic, most of the senior
+start to get a feel for an area.  Most of the senior
 participants will be well-versed in doing computations in number
-theory.  We will have experts from the LMFDB project in attendance to
+theory.  We will also have experts from the \textsf{LMFDB} project in attendance to
 aid people who may be contributing to that project for the first
-time.  Since the LMFDB uses Sage, an open-source computational system,
+time.  Since the \textsf{LMFDB} uses \textsf{Sage}, an open-source computational system,
 we invite a significant number of participants from the {\em Women in
   Sage} community to help broaden the representation of women in this
 conference.
@@ -122,11 +122,11 @@ Theoretical and computational work on elliptic curves over the
 rationals has enjoyed great advances over the past few decades.
 Recently there has been surge of work on extending this in two
 directions, namely to hyperelliptic curves over the rationals and
-elliptic curves over quadratic fields.  In additional, there have been
+elliptic curves over quadratic fields.  In addition, there have been
 parallel advances on the corresponding automorphic objects, namely
 Siegel and Hilbert modular forms.  A major objective of this
 conference is to present this recent work to a wider audience and in
-the process clarify the connections between the algebraic and
+the process to clarify the connections between the algebraic and
 automorphic objects.  There is a large amount of useful related
 numerical data which we would like to make available to the
 mathematics research community.
@@ -138,17 +138,28 @@ Recent advances to be covered in workshop lectures:
 \noindent
 William Stein and collaborators have been developing the analogue of
 Cremona's tables for elliptic curves over $\Q(\sqrt{5})$.  There are
-numerous difficulties which are not present in the rational case:
-modularity is not known, given the modular form, the construction of
-the corresponding elliptic curve is not known, etc.
+numerous difficulties which are not present in the rational case
+and also many recent methods for overcoming these difficulties.
+%:modularity is not known in all cases, given the modular form, the construction of
+% the corresponding elliptic curve is not known, etc.
+% JV: I commented this out.  The cases where modularity is not known (over
+% QQ(sqrt5) are those where the level is squarefull (every prime occurs to exponent >= 2).
+% This is certainly an important theoretical point but not such a huge
+% deal from the point of view of this workshop.
+% The "construction" of the elliptic curve is known whenever modularity is known,
+% and it boils down to taking the factor of the Jacobian of a Shimura curve.
+% This can even be done explicitly in many cases now.  
+% So I changed the wording.
 
 %One or two lectures by Stein.
 
 \item Hilbert modular forms
 
 \noindent
-John Voight has made extensive tables of Hilbert modular forms,
-primarily over $\Q(\sqrt{5})$ and $\Q(\sqrt{8})$.  The basic
+John Voight, in collaboration with Steve Donnelly, 
+has made extensive tables of Hilbert modular forms,
+including over 200000 forms over totally real fields of degree at most $6$ and including
+many forms over quadratic fields.  The basic
 theory, the computational methods, and the associated $L$-functions
 (which provide the connection to elliptic curves) will be
 described.
@@ -158,9 +169,11 @@ described.
 \item  Hyperelliptic curves
 
 \noindent
-Kiran Kedlaya and Andrew Sutherland have produced a wide variety
-of examples of hyperelliptic curves (primarily genus 2, but genus 3
-calculations will be available by the time of the workshop).
+Kiran Kedlaya, Andrew Sutherland, and their collaborators, have
+undertaken a systematic investigation of the Sato-Tate group of 
+hyperelliptic curves (primarily of genus $2$, but also some in genus $3$)
+and consequently have tabulated a wide variety
+of examples.
 
 %One lecture each by Sutherland and Kedlaya
 
@@ -170,8 +183,12 @@ calculations will be available by the time of the workshop).
 Siegel modular forms on the paramodular group are (conjecturally) the
 modular objects associated to genus 2 hyperelliptic curves.
 Cris Poor and David Yuen have produced the first examples of these
-objects.  These calculations are significantly more difficult than
-the corresponding work on Hilbert modular forms.
+objects.  
+
+% These calculations are significantly more difficult than
+% the corresponding work on Hilbert modular forms.
+% JV: I don't agree with this as written.  If whoever wrote it would like
+% to clarify, cool!  But even then, I don't see why it belongs in this proposal.
 
 %One lecture by Poor or Yuen
 
@@ -181,9 +198,11 @@ the corresponding work on Hilbert modular forms.
 Elliptic curves over imaginary quadratic fields are fundamentally
 different than elliptic curves over real quadratic fields, primarily
 because the associated modular object is a Bianchi modular form,
-not a Hilbert modular form.  Work in this area is much less advanced
-(despite the fact that John Cremona made tables of elliptic curves
-over $\Q(i)$ in his thesis.
+not a Hilbert modular form, and consequently even the
+most basic construction of an elliptic curve from a Bianchi form is
+still unknown.  Even with these limitations, John Cremona and his
+students, and more recently Dan Yasaki, have made tables of elliptic curves
+over imaginary quadratic fields such as $\Q(i)$.
 
 %One lecture by Cremona
 
@@ -192,7 +211,7 @@ over $\Q(i)$ in his thesis.
 \noindent
 Current methods of producing tables of hyperelliptic curves are not
 capable of proving that the list is complete.  David Farmer, Sally
-Koutsoliotas, and Stefan Lemurell and an $L$-function approach which
+Koutsoliotas, and Stefan Lemurell have an $L$-function approach which
 (assuming modularity) can provide the missing step in the proof.
 
 %One lecture by Koutsoliotas and/or Lemurell
@@ -208,18 +227,19 @@ of genus~$2$, that is, a smooth curve of the form
 \begin{equation}
 y^2=f(x)
 \end{equation}
-where $f\in k[x]$ is a polynomial of degree 5 or~6, where $k/\Q$ is a 
+where $f\in k[x]$ is a polynomial of degree 5 or~6 and $k$ is a 
 number field.
-Our specific focus is on the recent work of Kedlaya and Sutherland on the
-distribution of Euler factors of the $L$-function of the curve.  This work
-concerns abelian surfaces; at the workshop we will bring out the 
-connections
-with other objects.
+Our specific focus is on the recent work of Kedlaya and Sutherland and
+their collaborators on the
+distribution of Euler factors of the $L$-function of the curve.  
 
-It is not the hyperelliptic curve, but rather its jacobian to which we
-can associate an $L$-function.  The jacobian, $A$, is an abelian 
-surface/$k$.
-What Kedlaya and Sutherland proved is that there are (up to conjugacy)
+Via
+their Jacobians, this work
+concerns abelian surfaces; at the workshop we will bring out the 
+connections with other objects.  Indeed, it is not the hyperelliptic curve itself
+but rather its Jacobian $A$ to which we
+can associate an $L$-function.  
+There are (up to conjugacy)
 52 subgroups of $USp(4)$ which determine the distribution of Euler factors
 of the $L$-function of $A$.  That is, for each abelian surface $A$ there is
 a closed subgroup of $USp(4)$, called the Sato-Tate group of $A$,
@@ -232,7 +252,7 @@ cases,
 of which 34 occur for $k=\Q$.
 
 Workshop lectures will describe how the Sato-Tate group arises
-from the Galois action on the Tate module of~$A$, and briefly describe how
+from the Galois action on the Tate module of~$A$ and how
 the subgroups were classified.  While some of this material can be 
 described
 for any number field, we will primarily consider hyperelliptic curves over 
@@ -240,9 +260,9 @@ the
 rationals.  In this case the $L$-function has degree~4, which makes 
 computation
 more tractable, and there are connections to objects from other lectures,
-such as Siegel modular forms.  The role of the Sata-Tate group in 
+such as Siegel modular forms.  The role of the Sato-Tate group in 
 identifying
-the associated modular object, and determining its properties, will be the
+the associated modular object and determining its properties will be the
 starting point for discussions on future avenues of research.
 
 
@@ -251,32 +271,46 @@ starting point for discussions on future avenues of research.
 
 \subsection{Elliptic curves over low degree number fields}
 
-An elliptic curve over a number field $k/\Q$ has a $L$-function of
+An elliptic curve over a number field $k$ has a $L$-function of
 degree~$2d$, where $d=[k:\Q]$.  We will be primarily concerned with
 quadratic fields, because of their relation to other objects already
-in the LMFDB.
+in the \textsf{LMFDB}.
 
 In the case of real quadratic fields, lectures will focus on the
 computational challenges faced by Stein and his collaborators as they
 tabulate elliptic curves over $\Q(\sqrt5)$.  There are numerous
-aspects of that work which are hampered by our rudimentary knowledge
+aspects of that work which are hampered by our limited knowledge
 of this area; this discussion will be the starting point for research
 project involving both theory and computation.
 
 The modular object associated to $E/\Q(\sqrt5)$ is a Hilbert modular
-form on $\GL(2)/\Q(\sqrt5)$, which will be the topic of another
+form on $\GL_2$ over $\Q(\sqrt5)$, which will be the topic of another
 series of lectures.
-
 
 \subsection{Hilbert modular forms}
 
+Hilbert modular forms are a generalization of classical modular forms
+(on $\GL_2$) to totally real fields $F$.  Although the associated 
+Hilbert modular variety associated to a field and level can in general
+have quite large dimension, the Jacquet-Langlands correspondence
+implies that one can see the same system of Hecke eigenvalues
+on quaternionic forms of $\GL_2$ and thereby work on either
+a Shimura curve or with a definite quaternion algebra.
+
+Methods for computing Hilbert modular forms have seen substantial
+development in the past five years and now there are large databases
+of forms available.  Lectures on Hilbert modular forms would discuss
+their algorithmic aspects, focusing on concrete examples and 
+future directions of research.
+
 \subsection{Siegel modular forms}
 
-Computation of Siegel modular forms is quite rudimentary compared to
+Currently, algorithmic methods for computing Siegel modular 
+forms is quite limited compared to
 the computation of either classical or Hilbert modular forms.  For
 higher weight there is the possibility of employing cohomological
-methods (the analogue os modular symbols for classical holomorphic
-modular forms).  However, for the weight 2 case, which is associated
+methods, the analogue of modular symbols for classical holomorphic
+modular forms.  However, for the weight 2 case, which is associated
 to hyperelliptic curves, this is not an option.  Specifically, we are
 interested in weight 2 cusp forms on the level-$N$ paramodular group,
 defined as
@@ -351,7 +385,7 @@ many phenomena typical of arbitrary algebraic curves.
 %this discussion on curves of genus greater than 1.
 
 Achieving a meaningful and useful classification of hyperelliptic
-curves in the LMFDB, comparable to the Cremona database of elliptic
+curves in the \textsf{LMFDB}, comparable to the Cremona database of elliptic
 curves, would require progress in the following
 directions. (Throughout this discussion, we will limit attention to
 hyperelliptic curves over $\QQ$, but we may consider working over
@@ -681,7 +715,7 @@ school now at UW; Stein intends to support Ohana to do further work in
 this direction.
 
 %This work will also produce a multitude of Hilbert modular forms, which
-%are of independent interest.  Stein will work with LMFDB collaborator Voight
+%are of independent interest.  Stein will work with \textsf{LMFDB} collaborator Voight
 %to make this data available.
 
 \subsection{Elliptic curves over complex cubic fields}
@@ -799,7 +833,7 @@ the fields of discriminants  $-31$, \dots , $-107$ can be found at
 \cite{ariah} and in \cite{torsioncubic}.
 \item Extend the computations of \cite{complexcubic} to nontrivial
 coefficients, i.e.~compile tables of higher weight cuspforms.
-\item Incorporate all this data into the LMFDB.
+\item Incorporate all this data into the \textsf{LMFDB}.
 \end{enumerate}
 
 
@@ -898,7 +932,7 @@ registration fee.
 \section{Dissemination}
 
 Dissemination of results from this workshop will be through the
-LMFDB.  This web site is the result of an ongoing international
+\textsf{LMFDB}.  This web site is the result of an ongoing international
 collaboration, with contributions from roughly $50$ number theorists
 thus far.  It serves the mathematical community in two ways.
 
@@ -911,7 +945,7 @@ proven useful to number theory researchers in formulating and testing
 conjectures, and in some cases can play a role in the proof of
 theorems.
 
-Second, the LMFDB plays an educational role for people interested in
+Second, the \textsf{LMFDB} plays an educational role for people interested in
 number theory.  It has an overview of number theoretic objects,
 contains brief explanations regarding the objects it contains, and
 shows interconnections between them.  
@@ -923,8 +957,8 @@ links to pages for its associated modular form, its $L$-function, and
 symmetric powers of its $L$-function.
 
 During the afternoons, we will have partipants extending and improving
-the LMFDB in ways related to the themes of this workshop.  We expect
-to expand the LMFDB to include sections for hyperelliptic curves over
+the \textsf{LMFDB} in ways related to the themes of this workshop.  We expect
+to expand the \textsf{LMFDB} to include sections for hyperelliptic curves over
 $\Q$, elliptic curves over various quadratic fields, and their
 associated $L$-functions.  We also expect to improve the areas on
 Hilbert and Siegel modular forms, and to improve the
