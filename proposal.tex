@@ -1,6 +1,17 @@
-\documentclass[amstex,11pt]{amsart}
+\documentclass[12pt]{amsart}
+
+\setlength{\topmargin}{-0.3in} 
+\setlength{\textheight}{8.2in}
+\setlength{\textwidth}{6.5in} 
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\addtolength{\footskip}{0.2in}
+\renewcommand{\baselinestretch}{1.4}
+\addtolength{\parskip}{0.3ex}
+
+
 \usepackage{datetime}
-\usepackage{amsmath}
+%\usepackage{amsmath}
 \usepackage{graphics}
 \usepackage{verbatim}
 
@@ -13,28 +24,29 @@
 \DeclareMathOperator{\PGL}{PGL}
 \DeclareMathOperator{\Sp}{Sp}
 \DeclareMathOperator{\GSp}{GSp}
+\DeclareMathOperator{\USp}{USp}
 \newcommand{\pp}{\mathfrak{p}}
 \newcommand{\nn}{\mathfrak{n}}
 \newcommand{\p}{\mathfrak{p}}
 \newcommand{\n}{\mathfrak{n}}
 \newcommand{\ncisom}{\approx}   % noncanonical isomorphism
 
-
+\pagestyle{plain}
 % Linked CONTENTS
 \usepackage{hyperref}
 %%%%%%%%%%%%%%%%%
 
 %\setlength{\parskip}{2ex}
-\setlength{\parskip}{0.1ex}
+%\setlength{\parskip}{0.1ex}
 
-\voffset -0.5in
-\hoffset -0.8in
-%\oddsidemargin  -0.3125in
-%\evensidemargin -0.3125in
-\textwidth      6.475in
-\headheight     0.0in
-\topmargin      0.063in
-\textheight=9.3875in
+% \voffset -0.5in
+% \hoffset -0.8in
+% %\oddsidemargin  -0.3125in
+% %\evensidemargin -0.3125in
+% \textwidth      6.475in
+% \headheight     0.0in
+% \topmargin      0.063in
+% \textheight=9.3875in
 
 \numberwithin{equation}{section}
 
@@ -77,14 +89,15 @@
 \section{Overview}
 
 The theme for this conference is connections
-between curves and modular forms and their computational aspects.
-Our goals are to provide a setting
-to
+between curves, modular forms, $L$-functions, and their computational
+aspects.
+Our goals are to provide a setting to
 \begin{itemize}
 \item allow dissemination of recent research results;
 \item foster collaboration among experts working in areas which are
   (conjecturally) related;
-\item aid in the development of number theorists who are early-career or from underrepresented groups; and
+\item aid in the development of number theorists who are early-career
+  or from underrepresented groups; and 
 \item make relevant computational results publicly available.
 \end{itemize}
 
@@ -103,16 +116,18 @@ Computational results will be made available through the website {\em
 This site is an international collaboration dedicated to presenting
 computational data in number theory and related fields to assist
 mathematicians conducting research and also to help educate
-visitors to the site about some of the central objects of modern number theory and their
-interconnections.
+visitors to the site about some of the central objects of modern
+number theory and their interconnections.
 
 Computational projects provide a good path for young mathematicians to
 start to get a feel for an area.  Most of the senior
 participants will be well-versed in doing computations in number
-theory.  We will also have experts from the \textsf{LMFDB} project in attendance to
+theory.  We will also have experts from the \textsf{LMFDB} project in
+attendance to 
 aid people who may be contributing to that project for the first
-time.  Since the \textsf{LMFDB} uses \textsf{Sage}, an open-source computational system,
-we invite a significant number of participants from the {\em Women in
+time.  Since the \textsf{LMFDB} uses \textsf{Sage}, an open-source
+computational system, 
+we will invite a significant number of participants from the {\em Women in
   Sage} community to help broaden the representation of women in this
 conference.
 
@@ -133,7 +148,7 @@ mathematics research community.
 
 Recent advances to be covered in workshop lectures:
 \begin{enumerate}
-\item  Elliptic curves/$\Q(\sqrt{5})$.
+\item  Elliptic curves over real quadratic fields: one or two lectures
 
 \noindent
 William Stein and collaborators have been developing the analogue of
@@ -153,12 +168,13 @@ and also many recent methods for overcoming these difficulties.
 
 %One or two lectures by Stein.
 
-\item Hilbert modular forms
+\item Hilbert modular forms: one or two lectures
 
 \noindent
 John Voight, in collaboration with Steve Donnelly, 
 has made extensive tables of Hilbert modular forms,
-including over 200000 forms over totally real fields of degree at most $6$ and including
+including over $200{,}000$ forms over totally real fields of degree at
+most $6$ and including 
 many forms over quadratic fields.  The basic
 theory, the computational methods, and the associated $L$-functions
 (which provide the connection to elliptic curves) will be
@@ -166,7 +182,7 @@ described.
 
 %One or two lectures by Voight.
 
-\item  Hyperelliptic curves
+\item  Hyperelliptic curves: two lectures
 
 \noindent
 Kiran Kedlaya, Andrew Sutherland, and their collaborators, have
@@ -177,7 +193,8 @@ of examples.
 
 %One lecture each by Sutherland and Kedlaya
 
-\item  Paramodular forms
+
+\item  Paramodular forms: one lecture
 
 \noindent
 Siegel modular forms on the paramodular group are (conjecturally) the
@@ -192,13 +209,13 @@ objects.
 
 %One lecture by Poor or Yuen
 
-\item  Elliptic curves/$\Q(i)$
+\item  Elliptic curves over non-totally real number fields: two lectures
 
 \noindent
 Elliptic curves over imaginary quadratic fields are fundamentally
 different than elliptic curves over real quadratic fields, primarily
-because the associated modular object is a Bianchi modular form,
-not a Hilbert modular form, and consequently even the
+because the associated modular object is a Bianchi modular form
+rather than a Hilbert modular form, and consequently even the
 most basic construction of an elliptic curve from a Bianchi form is
 still unknown.  Even with these limitations, John Cremona and his
 students, and more recently Dan Yasaki, have made tables of elliptic curves
@@ -206,7 +223,7 @@ over imaginary quadratic fields such as $\Q(i)$.
 
 %One lecture by Cremona
 
-\item  $L$-function techniques for hyperelliptic curves
+\item  $L$-function techniques for hyperelliptic curves: one lecture
 
 \noindent
 Current methods of producing tables of hyperelliptic curves are not
@@ -227,43 +244,34 @@ of genus~$2$, that is, a smooth curve of the form
 \begin{equation}
 y^2=f(x)
 \end{equation}
-where $f\in k[x]$ is a polynomial of degree 5 or~6 and $k$ is a 
-number field.
-Our specific focus is on the recent work of Kedlaya and Sutherland and
-their collaborators on the
-distribution of Euler factors of the $L$-function of the curve.  
+where $f\in k[x]$ is a polynomial of degree 5 or~6 and $k$ is a number
+field.  Our specific focus is on the recent work of Kedlaya and
+Sutherland and their collaborators on the distribution of Euler
+factors of the $L$-function of the curve.
 
-Via
-their Jacobians, this work
-concerns abelian surfaces; at the workshop we will bring out the 
-connections with other objects.  Indeed, it is not the hyperelliptic curve itself
-but rather its Jacobian $A$ to which we
-can associate an $L$-function.  
-There are (up to conjugacy)
-52 subgroups of $USp(4)$ which determine the distribution of Euler factors
-of the $L$-function of $A$.  That is, for each abelian surface $A$ there is
-a closed subgroup of $USp(4)$, called the Sato-Tate group of $A$,
-such that the local factors of the
-$L$-function of $A$ have the same limiting distribution as the 
-characteristic
-polynomials of matrices in the subgroup.
-They exhibit hyperelliptic curves whose Jacobians give examples of all 52 
-cases,
-of which 34 occur for $k=\Q$.
+Via their Jacobians, this work concerns abelian surfaces; at the
+workshop we will bring out the connections with other objects.
+Indeed, it is not the hyperelliptic curve itself but rather its
+Jacobian $A$ to which we can associate an $L$-function.  There are (up
+to conjugacy) 52 subgroups of $\USp(4)$ which determine the
+distribution of Euler factors of the $L$-function of $A$.  That is,
+for each abelian surface $A$ there is a closed subgroup of $\USp(4)$,
+called the Sato-Tate group of $A$, such that the local factors of the
+$L$-function of $A$ have the same limiting distribution as the
+characteristic polynomials of matrices in the subgroup.  Kedlaya and
+Sutherland exhibit hyperelliptic curves whose Jacobians give examples
+of all $52$ cases, of which $34$ occur for $k=\Q$.
 
-Workshop lectures will describe how the Sato-Tate group arises
-from the Galois action on the Tate module of~$A$ and how
-the subgroups were classified.  While some of this material can be 
-described
-for any number field, we will primarily consider hyperelliptic curves over 
-the
-rationals.  In this case the $L$-function has degree~4, which makes 
-computation
-more tractable, and there are connections to objects from other lectures,
-such as Siegel modular forms.  The role of the Sato-Tate group in 
-identifying
-the associated modular object and determining its properties will be the
-starting point for discussions on future avenues of research.
+Workshop lectures will describe how the Sato-Tate group arises from
+the Galois action on the Tate module of~$A$ and how the subgroups were
+classified.  While some of this material can be described for any
+number field, we will primarily consider hyperelliptic curves over the
+rationals.  In this case the $L$-function has degree~4, which makes
+computation more tractable, and there are connections to objects from
+other lectures, such as Siegel modular forms.  The role of the
+Sato-Tate group in identifying the associated modular object and
+determining its properties will be the starting point for discussions
+on future avenues of research.
 
 
 
@@ -282,10 +290,18 @@ tabulate elliptic curves over $\Q(\sqrt5)$.  There are numerous
 aspects of that work which are hampered by our limited knowledge
 of this area; this discussion will be the starting point for research
 project involving both theory and computation.
-
+%
 The modular object associated to $E/\Q(\sqrt5)$ is a Hilbert modular
 form on $\GL_2$ over $\Q(\sqrt5)$, which will be the topic of another
 series of lectures.
+
+In the case of number fields which are not totally real, there has
+been work led by Cremona on computing elliptic fields over quadratic
+imaginary fields.  Here the associated automorphic forms are
+conjectured to be Bianchi modular forms, although neither direction of
+the correspondence is known.  More recent work by Gunnells, Yasaki,
+and others has started to look at elliptic curves over larger degree
+fields.
 
 \subsection{Hilbert modular forms}
 
@@ -323,7 +339,7 @@ K(N)=\left\{
 N*&N*&N*&*
 \end{matrix}\right)
 :
-*\in{\Bbb Z}\right\}\cap \mathrm{Sp}(4, {\Bbb Q}).
+*\in{\Z}\right\}\cap \mathrm{Sp}(4, \Q).
 $$
 This group is an an analogue of the Hecke congruence group
 $\Gamma_0(N)$, in the sense that it is normalized by an analogue of
@@ -333,17 +349,17 @@ Current methods, primarily due to Poor and Yuen, are computationally
 intensive due to the difficulty of finding a basis for the space of
 cusp forms.  The main technique is via descent from higher weights,
 and exploiting the ``smearing'' action of Hecke operators acting on
-non-cuspforms.  Unless there are new developments between now and the
-workshop, lectures on Siegel modular forms will briefly cover
+non-cuspforms.  Lectures on Siegel modular forms will briefly cover
 background and computational methods, and then focus on the
-``paramodular conjecture,'' which is the higher rank analogue of
+``paramodular conjecture,'' which gives a higher rank analogue of
 modularity for elliptic curves.
 
 
 \subsection{$L$-functions}
 
-An $L$-function is a Dirichlet series with a functional equation and
-an Euler product, plus a few technical conditions.  One view of
+We consider $L$-functions of the Selberg class.
+Each has a Dirichlet series, functional equation, 
+Euler product, and must statisfy few technical conditions.  One view of
 $L$-functions is that they are the glue which connects related
 mathematical objects.  For example, a geometric object is said to be
 modular if it has the same $L$-function as an automorphic form.
@@ -870,32 +886,31 @@ ASU will provide secretarial and clerical support for the conference.
 The organizing committee for the conference is David
 Farmer, Paul Gunnells, 
 John Jones, and Holly Swisher.
-
+%
 We have tentative agreements from the following mathematicians to give
 plenary talks:
 John Cremona, Kiran Kedlaya, Sally Koutsoliotas, Stefan Lemurell, 
 Cris Poor, William Stein, Andrew Sutherland, John Voight, and David Yuen.
 
-\section{Daily organization}
+% \section{Daily organization}
 
 
-Each day will feature two talks in the morning providing background
-information and describing recent work and current problems of
-interest.  Each afternoon will involve group work in which the
-participants are actively engaged in a variety of activities related
-to the workshop focus.  Those activities will include starting or
-continuing research projects, going through the details of advanced
-material which was not covered in the lectures, and working to put new
-material into the $L$-functions and Modular Forms Database
-(\url{http://www.LMFDB.org}).
+% Each day will feature two talks in the morning providing background
+% information and describing recent work and current problems of
+% interest.  Each afternoon will involve group work in which the
+% participants are actively engaged in a variety of activities related
+% to the workshop focus.  Those activities will include starting or
+% continuing research projects, going through the details of advanced
+% material which was not covered in the lectures, and working to put new
+% material into the $L$-functions and Modular Forms Database
+% (\url{http://www.LMFDB.org}).
 
 \section{Budget}
 
 All requested funds are for participant support.  We plan to invite
 $30$ mathematicians who we feel will be able to contribute in
-significant ways to the workshop portion of the conference.  We are
-requesting funds to pay for travel, food, and lodging for these
-people.  
+significant ways to the conference.  We are requesting funds to pay
+for travel, food, and lodging for these people.
 
 We will invite mathematicians all different stages in their careers:
 graduate students, post-docs and other recent Ph.D.s, junior faculty,
@@ -905,8 +920,8 @@ underrepresented groups.  One such group where we expect to have the
 most success is with female mathematicians.  There are natural
 connections between the LMFDB project and SAGE development.  One of
 the conference organizers has been involved in Women in Sage.  We plan
-to invite at least eight female mathematicians from that group to
-participate in this conference.
+to devote at least a fourth of the invitations to members of
+underrepresented groups.
 
 Attendence at the conference will be open to all mathematicians.  We
 are requesting funding to defray travel costs of a limited number of
@@ -933,7 +948,7 @@ registration fee.
 
 Dissemination of results from this workshop will be through the
 \textsf{LMFDB}.  This web site is the result of an ongoing international
-collaboration, with contributions from roughly $50$ number theorists
+collaboration, with contributions from roughly $50$ number theorists,
 thus far.  It serves the mathematical community in two ways.
 
 First, it provides results of rigorous computations of mathematical
@@ -951,10 +966,10 @@ contains brief explanations regarding the objects it contains, and
 shows interconnections between them.  
 
 For example, when viewing the web page for a specific elliptic curve
-over $\Q$, the user sees the important invariants of the curve such as
-its conductor, rank, and Mordell-Weil generators.  He will also have
-links to pages for its associated modular form, its $L$-function, and
-symmetric powers of its $L$-function.
+over $\Q$, users see the important invariants of the curve such as its
+conductor, rank, and Mordell-Weil generators.  They also have links to
+pages for its associated modular form, isogenous curves, its
+$L$-function, and symmetric powers of its $L$-function.
 
 During the afternoons, we will have partipants extending and improving
 the \textsf{LMFDB} in ways related to the themes of this workshop.  We expect
