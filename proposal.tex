@@ -8,7 +8,7 @@
 \addtolength{\footskip}{0.2in}
 \renewcommand{\baselinestretch}{1.4}
 \addtolength{\parskip}{0.3ex}
-
+\renewcommand{\bibliofont}{\normalsize}
 
 \usepackage{datetime}
 %\usepackage{amsmath}
@@ -247,13 +247,14 @@ y^2=f(x)
 where $f\in k[x]$ is a polynomial of degree 5 or~6 and $k$ is a number
 field.  Our specific focus is on the recent work of Kedlaya and
 Sutherland and their collaborators on the distribution of Euler
-factors of the $L$-function of the curve.
+factors of the $L$-function of the curve
+\cite{KS-1,kedlaya-sutherland-ants}.
 
 Via their Jacobians, this work concerns abelian surfaces; at the
 workshop we will bring out the connections with other objects.
 Indeed, it is not the hyperelliptic curve itself but rather its
 Jacobian $A$ to which we can associate an $L$-function.  There are (up
-to conjugacy) 52 subgroups of $\USp(4)$ which determine the
+to conjugacy) $52$ subgroups of $\USp(4)$ which determine the
 distribution of Euler factors of the $L$-function of $A$.  That is,
 for each abelian surface $A$ there is a closed subgroup of $\USp(4)$,
 called the Sato-Tate group of $A$, such that the local factors of the
@@ -286,7 +287,8 @@ in the \textsf{LMFDB}.
 
 In the case of real quadratic fields, lectures will focus on the
 computational challenges faced by Stein and his collaborators as they
-tabulate elliptic curves over $\Q(\sqrt5)$.  There are numerous
+tabulate elliptic curves over $\Q(\sqrt5)$ \cite{sqrt5first}.  There
+are numerous 
 aspects of that work which are hampered by our limited knowledge
 of this area; this discussion will be the starting point for research
 project involving both theory and computation.
@@ -297,10 +299,12 @@ series of lectures.
 
 In the case of number fields which are not totally real, there has
 been work led by Cremona on computing elliptic fields over quadratic
-imaginary fields.  Here the associated automorphic forms are
+imaginary fields \cite{cremona1, cremona-lingham, cremona}.  Here the
+associated automorphic forms are
 conjectured to be Bianchi modular forms, although neither direction of
-the correspondence is known.  More recent work by Gunnells, Yasaki,
-and others has started to look at elliptic curves over larger degree
+the correspondence is known.  More recent work by Gunnells,
+Klages-Mundt, and Yasaki \cite{complexcubic, neg23,quartic}
+has started to look at elliptic curves over larger degree
 fields.
 
 \subsection{Hilbert modular forms}
@@ -345,13 +349,15 @@ This group is an an analogue of the Hecke congruence group
 $\Gamma_0(N)$, in the sense that it is normalized by an analogue of
 the Fricke involution.
 
-Current methods, primarily due to Poor and Yuen, are computationally
+Current methods, primarily due to Poor and Yuen \cite{poory, PY_para_p}, are
+computationally
 intensive due to the difficulty of finding a basis for the space of
 cusp forms.  The main technique is via descent from higher weights,
 and exploiting the ``smearing'' action of Hecke operators acting on
 non-cuspforms.  Lectures on Siegel modular forms will briefly cover
 background and computational methods, and then focus on the
-``paramodular conjecture,'' which gives a higher rank analogue of
+``paramodular conjecture'' \cite{BrumerKramer}, which gives a higher
+rank analogue of 
 modularity for elliptic curves.
 
 
