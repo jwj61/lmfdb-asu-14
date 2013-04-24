@@ -186,21 +186,20 @@ objects.
 
 \item  Elliptic curves over non-totally real number fields (two lectures).
 
-\noindent
-Elliptic curves over imaginary quadratic fields are fundamentally
-different than elliptic curves over real quadratic fields, primarily
-because the associated automorphic form is a Bianchi modular form
-rather than a Hilbert modular form.  One knows that Galois
-representations can be attached to these automorphic forms, but there
+\noindent Investigating elliptic curves over non-totally real number
+fields presents unique challenges.  Over imaginary quadratic fields,
+for instance, the associated automorphic form is a Bianchi modular
+form rather than a Hilbert modular form.  One knows that Galois
+representations can be attached to such automorphic forms, but there
 is no analogue of the Eichler-Shimura construction of an elliptic
-curve from the modular form.  Despite these limitations, John Cremona and his
-students, and more recently Dan Yasaki, have made tables of elliptic curves
-over various imaginary quadratic fields such as $\Q(i)$.  When moves
-away from imaginary quadratic fields one has even fewer tools at ones
-disposal, yet recently tables of cohomological automorphic forms and
-the conjecturally corresponding elliptic curves have been produced
-over the cyclotomic field $\Q (\exp (2\pi i/5))$ and the cubic field
-of discriminant $-23$.
+curve from the modular form.  Despite these limitations, John Cremona
+and his students, and more recently Dan Yasaki, have made tables of
+elliptic curves over various imaginary quadratic fields such as
+$\Q(i)$.  When moves away from imaginary quadratic fields one has even
+fewer tools at hand, yet recently tables of cohomological automorphic
+forms and the conjecturally corresponding elliptic curves have been
+produced over the cyclotomic field $\Q (\exp (2\pi i/5))$ and the
+cubic field of discriminant $-23$.
 
 %One lecture by Cremona
 
@@ -302,15 +301,16 @@ future directions of research.
 
 \subsection{Siegel modular forms}
 
-Currently, algorithmic methods for computing Siegel modular 
-forms is quite limited compared to
-the computation of either classical or Hilbert modular forms.  For
-higher weight there is the possibility of employing cohomological
+Current algorithmic methods for computing Siegel modular forms are
+quite limited compared to those for elliptic or Hilbert modular forms.
+For higher weight there is the possibility of employing cohomological
 methods, the analogue of modular symbols for classical holomorphic
-modular forms.  However, for the weight 2 case, which is associated
-to hyperelliptic curves, this is not an option.  Specifically, we are
-interested in weight 2 cusp forms on the level-$N$ paramodular group,
-defined as
+modular forms.  However weight 2 Siegel modular forms, which are associated to
+hyperelliptic curves, are not cohomological, and other techniques must
+be pursued.  
+
+Specifically, we are interested in weight 2 cusp forms on the
+level-$N$ paramodular group $K (N)$, defined by
 $$
 K(N)=\left\{
 \left(\begin{matrix}
@@ -322,20 +322,20 @@ N*&N*&N*&*
 :
 *\in{\Z}\right\}\cap \mathrm{Sp}(4, \Q).
 $$
+% ouch i hate this choice of symplectic form \dots but i guess
+% most people are cool with it
 This group is an an analogue of the Hecke congruence group
 $\Gamma_0(N)$, in the sense that it is normalized by an analogue of
-the Fricke involution.
+the Fricke involution.  Current methods, primarily due to Poor and
+Yuen \cite{poory, PY_para_p}, are computationally intensive due to the
+difficulty of finding a basis for the space of cusp forms.  The main
+technique is descent from higher weights coupled with using Hecke
+operators to generate new forms from non-eigenforms. 
 
-Current methods, primarily due to Poor and Yuen \cite{poory, PY_para_p}, are
-computationally
-intensive due to the difficulty of finding a basis for the space of
-cusp forms.  The main technique is via descent from higher weights,
-and exploiting the ``smearing'' action of Hecke operators acting on
-non-cuspforms.  Lectures on Siegel modular forms will briefly cover
-background and computational methods, and then focus on the
-``paramodular conjecture'' \cite{BrumerKramer}, which gives a higher
-rank analogue of 
-modularity for elliptic curves.
+The workshop lectures on Siegel modular forms will briefly cover
+background and these computational methods, and then will focus on the
+``paramodular conjecture'' \cite{BrumerKramer}, a symplectic analogue
+of the modularity theorem for elliptic curves over $\Q$.
 
 
 \subsection{$L$-functions}
@@ -343,14 +343,14 @@ modularity for elliptic curves.
 We consider $L$-functions of the Selberg class.
 Each has a Dirichlet series, functional equation, 
 Euler product, and must statisfy few technical conditions.  One view of
-$L$-functions is that they are the glue which connects related
+$L$-functions is that they are the glue that connects related
 mathematical objects.  For example, a geometric object is said to be
 modular if it has the same $L$-function as an automorphic form.
 
 In this workshop the general theory of $L$-functions will be
 introduced, and this framework will be used to provide a high-level
-description of the connections between the other objects which have
-been introduced.  There are two topics of current research which will
+description of the connections between the other objects that have
+been introduced.  There are two topics of current research that will
 be presented and then will form the basis of later discussions.  The
 first is the recent discovery by Farmer, Koutsoliotas, and Lemurell
 that it is possible in many cases to generate the $L$-function of an
@@ -376,10 +376,9 @@ discussed in detail at the workshop.
 
 The conference will be held on the main campus of Arizona State
 University in Tempe, AZ.  Tempe can be easily accessed from Phoenix
-Sky Harbor international airport, which is a hub for a major airline,
-so is easily accessible.
+Sky Harbor international airport, which is a hub for many major airlines.
 
-ASU will provide meeting space and wifi access for conference
+ASU will provide meeting space and Wi-Fi access for conference
 activities, and the School of Mathematical and Statistical Sciences at
 ASU will provide secretarial and clerical support for the conference.
 
@@ -410,20 +409,20 @@ Cris Poor, William Stein, Andrew Sutherland, John Voight, and David Yuen.
 \section{Budget}
 
 All requested funds are for participant support.  We plan to invite
-$30$ mathematicians who we feel will be able to contribute in
-significant ways to the conference.  We are requesting funds to pay
-for travel, food, and lodging for these people.
+$30$ mathematicians we feel will be able to contribute in significant
+ways to the conference.  We are requesting funds to pay for travel,
+food, and lodging for these people.
 
 We will invite mathematicians all different stages in their careers:
 graduate students, post-docs and other recent Ph.D.s, junior faculty,
 and senior faculty (in the last case, primarily to give some of the
 plenary talks).  We will also focus on inviting mathematicians from
-underrepresented groups.  One such group where we expect to have the
-most success is with female mathematicians.  There are natural
-connections between the LMFDB project and SAGE development.  One of
-the conference organizers has been involved in Women in Sage.  We plan
-to devote at least a fourth of the invitations to members of
-underrepresented groups.
+underrepresented groups.  One group where we expect to have the most
+success is female mathematicians, since there are natural connections
+between the LMFDB project and SAGE development, and since one of the
+conference organizers has been consistently \textbf{can we say this}
+involved in Women in Sage.  We plan to devote at least a fourth of the
+invitations to members of underrepresented groups.
 
 Attendence at the conference will be open to all mathematicians.  We
 are requesting funding to defray travel costs of a limited number of
